@@ -1,0 +1,8 @@
+db.sqlite3
+task_manager/__pycache__
+task_manager/__init__.py
+taska/__pycache__
+taska/migrations/__pycache__
+taska/migrations/__init__.py
+taska/__init__.py
+manage.py
