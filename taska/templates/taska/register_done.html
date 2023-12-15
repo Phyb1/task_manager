@@ -1,0 +1,8 @@
+{% extends "taska/base.html" %}
+{% block title %}Welcome{% endblock title %}
+{% block content %}
+<h1>Welcome {{new_user.first_name}} to Task manager</h1>
+<p>
+    Your account has been successful created.
+Now you can<a href="{% url 'taska:login' %}">Login</a></p>
+{% endblock content %}
