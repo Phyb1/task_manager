@@ -1,5 +1,12 @@
 {% extends "taska/base.html" %}
 {% block title %}Welcome{% endblock title %}
 {% block content %}
-<p>hi</p>
+<div><dl>
+    {% for task in tasks %}
+    <dt>{{task.title}}</dt>
+    <dd>{{task.description|truncatewords:30}}</dd>
+    <dd>Due on {{task.due_date}}</dd>
+    {% endfor %}
+</dl>
+</div>
 {% endblock content %}

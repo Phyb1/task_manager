@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .forms import LoginForm, UserRegistrationForm
+from .models import Task
 
 # Create your views here.
 def index(request):
-    return render(request, 'taska/index.html')
+    tasks = Task.objects.all()
+    return render(request, 'taska/index.html', {'tasks':tasks})
 
 def register(request):
     if request.method == 'POST':
@@ -16,6 +18,6 @@ def register(request):
             new_user.save()
             return render(request, 
                           'taska/register.html', {'new_user':new_user})
-        else:
-            user_form =UserRegistrationForm()
-        return render(request, 'taska/register.html', {'user_form':user_form})
+    else:
+        user_form =UserRegistrationForm()
+    return render(request, 'taska/register.html', {'user_form':user_form})
